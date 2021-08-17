@@ -1,18 +1,32 @@
 type Props = Record<string, string | number | boolean>;
 
-const propsToString = (props: Props) => Object.keys(props)
-    .map((k) => `${k}="${props[k]}"`)
-    .join(" ");
+const propsToString = (props?: Props) => {
+    if(props) {
+        let res: string = "";
+        for (const k in props) res += `${k}="${props[k]}" `;
+        return res;
+    }
+
+    else return "";
+};
 
 const singleTag = <T>(type: string) =>
     (props?: T & Props) =>
-        () => `<${type} ${props ? propsToString(props): ""}/>`;
+        () => `<${type} ${propsToString(props)}/>`;
 
 const doubleTag = <T>(type: string) =>
     (props?: T & Props) =>
-        (...children: string[]) => children.length
-            ? `<${type} ${props ? propsToString(props): ""}>${children.join("")}</${type}>`
-            : singleTag(type)(props)();
+        (...children: string[]) => {
+            const length = children.length;
+
+            if(length) {
+                let content = "";
+                for(let i = 0; i < length; i++) content += children[i];
+                return `<${type} ${propsToString(props)}>${content}</${type}>`
+            }
+
+            else return singleTag(type)(props)();
+        };
 
 const div = doubleTag("div");
 const span = doubleTag("span");
