@@ -1,0 +1,23 @@
+{
+  "name": "susskind",
+  "version": "1.0.0",
+  "description": "Theoretical one-dimensional framework based on string theory.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-yamiteru/susskind.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/the-yamiteru/susskind/issues"
+  },
+  "homepage": "https://github.com/the-yamiteru/susskind#readme",
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.3.5"
+  }
+}
