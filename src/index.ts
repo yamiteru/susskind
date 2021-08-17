@@ -1,9 +1,11 @@
+import {App, HttpRequest} from "uWebSockets.js";
+
 type Props = Record<string, string | number | boolean>;
 
 const propsToString = (props?: Props) => {
     if(props) {
         let res: string = "";
-        for (const k in props) res += `${k}="${props[k]}" `;
+        for (const k in props) res += ` ${k}="${props[k]}"`;
         return res;
     }
 
@@ -12,7 +14,7 @@ const propsToString = (props?: Props) => {
 
 const singleTag = <T>(type: string) =>
     (props?: T & Props) =>
-        () => `<${type} ${propsToString(props)}/>`;
+        () => `<${type}${propsToString(props)}/>`;
 
 const doubleTag = <T>(type: string) =>
     (props?: T & Props) =>
@@ -22,12 +24,16 @@ const doubleTag = <T>(type: string) =>
             if(length) {
                 let content = "";
                 for(let i = 0; i < length; i++) content += children[i];
-                return `<${type} ${propsToString(props)}>${content}</${type}>`
+                return `<${type}${propsToString(props)}>${content}</${type}>`
             }
 
             else return singleTag(type)(props)();
         };
 
+const html = doubleTag("html");
+const head = doubleTag("head");
+const title = doubleTag("title");
+const body = doubleTag("body");
 const div = doubleTag("div");
 const span = doubleTag("span");
 const ul = doubleTag("ul");
@@ -38,31 +44,38 @@ const h3 = doubleTag("h3");
 const h4 = doubleTag("h4");
 const h5 = doubleTag("h5");
 const h6 = doubleTag("h6");
+const a = doubleTag("a");
 
-// Benchmark
-const sum = (arr: bigint[]) => arr.reduce((a,b) => a + b, BigInt(0));
-const { hrtime } = process;
+type Link = [title: string, link: string];
 
-const list = 20;
-const samples = 6000;
-const data = [...Array(list)].map(() => ({
-    user: '<strong style="color:red">糖饼</strong>',
-    site: 'https://github.com/aui',
-}));
-const times: bigint[] = Array(samples);
+const links: Link[] = [
+    ["Susskind", "https://github.com/the-yamiteru/susskind"],
+    ["Stoic", "https://github.com/the-yamiteru/stoic"],
+    ["uWebSockets.js", "https://github.com/uNetworking/uWebSockets.js"],
+];
 
-for (let i = 0; i < samples; i++) {
-    const start = hrtime.bigint();
+type Document = (req: HttpRequest) => string;
 
-    ul()(
-        ...data.map(({ user, site }) =>
-            li()(`User: ${user} / Web Site: ${site}`)
+const document: Document = () => html()(
+    head()(
+        title()("Test - Homepage"),
+    ),
+    body()(
+        h1()("Hello World!"),
+        ul()(
+            ...links.map(([title, link]) =>
+                li()(
+                    a({ href: link })(title)
+                )
+            )
         )
+    ),
+);
+
+App()
+    .get("/*", (res, req) => res
+        .writeStatus("200 OK")
+        .end(document(req)))
+    .listen(3000, (soc) =>
+        soc && console.log("Listening to port 3000")
     );
-
-    times.push(hrtime.bigint() - start);
-}
-
-const avg = sum(times) / BigInt(samples);
-const ops = BigInt(1000000 * 1000) / avg;
-console.log(+avg.toString(), +ops.toString());
