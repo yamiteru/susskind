@@ -1,4 +1,5 @@
 export type Props = Record<string, string | number | boolean>;
+export type Children = string[];
 
 export type AnchorReferrerPolicy =
     | "no-referrer"

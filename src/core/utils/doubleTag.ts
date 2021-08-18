@@ -1,10 +1,10 @@
 import singleTag from "./singleTag";
 import propsToString from "./propsToString";
-import {Props} from "../types";
+import {Children, Props} from "../types";
 
 const doubleTag = <T>(type: string) =>
     (props?: T & Props) =>
-        (...children: string[]) => {
+        (...children: Children) => {
             const length = children.length;
 
             if(length) {
