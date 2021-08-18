@@ -1,7 +1,7 @@
 import {HttpRequest, HttpResponse} from "uWebSockets.js";
 import {Route} from "../types";
 
-const routeHandler = <T>(route: Route<T>) =>
+export const routeHandler = <T>(route: Route<T>) =>
     async (res: HttpResponse, req: HttpRequest) => {
         res.onAborted(() => res.aborted = true);
 
@@ -15,5 +15,3 @@ const routeHandler = <T>(route: Route<T>) =>
             .writeStatus("200 OK")
             .end(view));
     };
-
-export default routeHandler;
