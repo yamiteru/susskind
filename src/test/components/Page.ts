@@ -3,9 +3,13 @@ import {body, head, html} from "../../core";
 
 const Page = (...headChildren: Children) =>
     (...bodyChildren: Children) =>
-        html()(
-            head()(...headChildren),
-            body()(...bodyChildren),
-        );
+        (...otherChildren: Children) =>
+            html()(
+                head()(...headChildren),
+                body()(
+                    ...bodyChildren,
+                    ...otherChildren,
+                ),
+            );
 
 export default Page;
