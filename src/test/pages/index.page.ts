@@ -1,12 +1,12 @@
 import {Component} from "../../core/types";
-import {a, body, h1, head, html, li, title, ul} from "../../core";
+import {a, h1, li, title, ul} from "../../core";
 import {IndexProps} from "./index.data";
+import Page from "../components/Page";
 
-const IndexPage: Component<IndexProps> = ({ name, links }) => () => html()(
-    head()(
-        title()("Test - Homepage"),
-    ),
-    body()(
+const IndexPage: Component<IndexProps> = ({ name, links }) => () =>
+    Page(
+        title()("Test - Homepage")
+    )(
         h1()(`Hello ${name}!`),
         ul()(
             ...links.map(([title, link]) =>
@@ -15,7 +15,6 @@ const IndexPage: Component<IndexProps> = ({ name, links }) => () => html()(
                 )
             )
         )
-    ),
-);
+    );
 
 export default IndexPage;
