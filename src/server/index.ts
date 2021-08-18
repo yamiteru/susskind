@@ -1,16 +1,29 @@
 import {App} from "uWebSockets.js";
 import {a, body, h1, head, html, li, title, ul} from "../core";
-import {Document} from "./types";
-import {links} from "./data/homepage";
+import startApp from "./utils/startApp";
+import {Component} from "../core/types";
+import {Data} from "./types";
 
-const PORT = 3000;
+type Props = {
+    name: string;
+    links: [title: string, link: string][];
+};
 
-const document: Document = () => html()(
+const IndexData: Data<Props> = async () => ({
+    name: "Yamiteru",
+    links: [
+        ["Susskind", "https://github.com/the-yamiteru/susskind"],
+        ["Stoic", "https://github.com/the-yamiteru/stoic"],
+        ["uWebSockets.js", "https://github.com/uNetworking/uWebSockets.js"],
+    ],
+});
+
+const IndexPage: Component<Props> = ({ name, links }) => () => html()(
     head()(
         title()("Test - Homepage"),
     ),
     body()(
-        h1()("Hello World!"),
+        h1()(`Hello ${name}!`),
         ul()(
             ...links.map(([title, link]) =>
                 li()(
@@ -21,10 +34,9 @@ const document: Document = () => html()(
     ),
 );
 
-App()
-    .get("/*", (res, req) => res
-        .writeStatus("200 OK")
-        .end(document(req)))
-    .listen(PORT, (soc) =>
-        soc && console.log(`Listening to port ${PORT}`)
-    );
+startApp(App())({
+    "/": {
+        data: IndexData,
+        page: IndexPage
+    }
+});

@@ -1,11 +1,11 @@
-type Object<T = any> = Record<string, T>;
+export type Object<T = any> = Record<string, T>;
 
 export type Props = Object<string | number | boolean>;
 
 export type Children = string[];
 
 export type Component<T extends Object> =
-    (props: T & Props) => (...children: Children) => string;
+    (props: T & Partial<Props>) => (...children: Children) => string;
 
 export type AnchorReferrerPolicy =
     | "no-referrer"
