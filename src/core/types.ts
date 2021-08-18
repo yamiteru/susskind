@@ -1,6 +1,21 @@
-export type Object<T = any> = Record<string, T>;
+export type Object<K extends string = string, V = any> = Record<K, V>;
 
-export type Props = Object<string | number | boolean>;
+export type DataProp = `data-${string}`;
+
+export type AriaProp = `aria-${string}`;
+
+export type PropKey = AriaProp | DataProp;
+
+export type PropValue = string | number | boolean;
+
+export type GeneralProps = Object<PropKey, PropValue>;
+
+export type SharedProps = {
+    id?: string;
+    class?: string;
+};
+
+export type Props = SharedProps & GeneralProps;
 
 export type Children = string[];
 
