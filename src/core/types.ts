@@ -11,8 +11,8 @@ export type PropValue = string | number | boolean;
 export type GeneralProps = Object<PropKey, PropValue>;
 
 export type SharedProps = {
-    id?: string;
-    class?: string;
+  id?: string;
+  class?: string;
 };
 
 export type Props = SharedProps & GeneralProps;
@@ -34,3 +34,17 @@ export type ReferrerPolicy =
   | "unsafe-url";
 
 export type Target = "_self" | "_blank" | "_parent" | "_top";
+
+export type As =
+  | "audio"
+  | "document"
+  | "embed"
+  | "fetch"
+  | "font"
+  | "image"
+  | "object"
+  | "script"
+  | "style"
+  | "track"
+  | "video"
+  | "worker";
