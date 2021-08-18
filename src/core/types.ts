@@ -13,6 +13,7 @@ export type GeneralProps = Object<PropKey, PropValue>;
 export type SharedProps = {
   id?: string;
   class?: string;
+  [key: string]: string | undefined;
 };
 
 export type Props = SharedProps & GeneralProps;
