@@ -1,20 +1,22 @@
+import {Booleanish} from "./common";
+
 export type AriaAttributes = {
     /** Identifies the currently active element when DOM focus is on a composite widget, textbox, group, or application. */
     'aria-activedescendant'?: string;
     /** Indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute. */
-    'aria-atomic'?: boolean | 'false' | 'true';
+    'aria-atomic'?: Booleanish;
     /**
      * Indicates whether inputting text could trigger display of one or more predictions of the user's intended value for an input and specifies how predictions would be
      * presented if they are made.
      */
     'aria-autocomplete'?: 'none' | 'inline' | 'list' | 'both';
     /** Indicates an element is being modified and that assistive technologies MAY want to wait until the modifications are complete before exposing them to the user. */
-    'aria-busy'?: boolean | 'false' | 'true';
+    'aria-busy'?: Booleanish;
     /**
      * Indicates the current "checked" state of checkboxes, radio buttons, and other widgets.
      * @see aria-pressed @see aria-selected.
      */
-    'aria-checked'?: boolean | 'false' | 'mixed' | 'true';
+    'aria-checked'?: Booleanish | 'mixed';
     /**
      * Defines the total number of columns in a table, grid, or treegrid.
      * @see aria-colindex.
@@ -36,7 +38,7 @@ export type AriaAttributes = {
      */
     'aria-controls'?: string;
     /** Indicates the element that represents the current item within a container or set of related elements. */
-    'aria-current'?: boolean | 'false' | 'true' | 'page' | 'step' | 'location' | 'date' | 'time';
+    'aria-current'?: Booleanish | 'page' | 'step' | 'location' | 'date' | 'time';
     /**
      * Identifies the element (or elements) that describes the object.
      * @see aria-labelledby
@@ -51,7 +53,7 @@ export type AriaAttributes = {
      * Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.
      * @see aria-hidden @see aria-readonly.
      */
-    'aria-disabled'?: boolean | 'false' | 'true';
+    'aria-disabled'?: Booleanish;
     /**
      * Indicates what functions can be performed when a dragged object is released on the drop target.
      * @deprecated in ARIA 1.1
@@ -63,7 +65,7 @@ export type AriaAttributes = {
      */
     'aria-errormessage'?: string;
     /** Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed. */
-    'aria-expanded'?: boolean | 'false' | 'true';
+    'aria-expanded'?: Booleanish;
     /**
      * Identifies the next element (or elements) in an alternate reading order of content which, at the user's discretion,
      * allows assistive technology to override the general default of reading in document source order.
@@ -73,19 +75,19 @@ export type AriaAttributes = {
      * Indicates an element's "grabbed" state in a drag-and-drop operation.
      * @deprecated in ARIA 1.1
      */
-    'aria-grabbed'?: boolean | 'false' | 'true';
+    'aria-grabbed'?: Booleanish;
     /** Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element. */
-    'aria-haspopup'?: boolean | 'false' | 'true' | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
+    'aria-haspopup'?: Booleanish | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog';
     /**
      * Indicates whether the element is exposed to an accessibility API.
      * @see aria-disabled.
      */
-    'aria-hidden'?: boolean | 'false' | 'true';
+    'aria-hidden'?: Booleanish;
     /**
      * Indicates the entered value does not conform to the format expected by the application.
      * @see aria-errormessage.
      */
-    'aria-invalid'?: boolean | 'false' | 'true' | 'grammar' | 'spelling';
+    'aria-invalid'?: Booleanish | 'grammar' | 'spelling';
     /** Indicates keyboard shortcuts that an author has implemented to activate or give focus to an element. */
     'aria-keyshortcuts'?: string;
     /**
@@ -103,11 +105,11 @@ export type AriaAttributes = {
     /** Indicates that an element will be updated, and describes the types of updates the user agents, assistive technologies, and user can expect from the live region. */
     'aria-live'?: 'off' | 'assertive' | 'polite';
     /** Indicates whether an element is modal when displayed. */
-    'aria-modal'?: boolean | 'false' | 'true';
+    'aria-modal'?: Booleanish;
     /** Indicates whether a text box accepts multiple lines of input or only a single line. */
-    'aria-multiline'?: boolean | 'false' | 'true';
+    'aria-multiline'?: Booleanish;
     /** Indicates that the user may select more than one item from the current selectable descendants. */
-    'aria-multiselectable'?: boolean | 'false' | 'true';
+    'aria-multiselectable'?: Booleanish;
     /** Indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous. */
     'aria-orientation'?: 'horizontal' | 'vertical';
     /**
@@ -130,19 +132,19 @@ export type AriaAttributes = {
      * Indicates the current "pressed" state of toggle buttons.
      * @see aria-checked @see aria-selected.
      */
-    'aria-pressed'?: boolean | 'false' | 'mixed' | 'true';
+    'aria-pressed'?: Booleanish | 'mixed';
     /**
      * Indicates that the element is not editable, but is otherwise operable.
      * @see aria-disabled.
      */
-    'aria-readonly'?: boolean | 'false' | 'true';
+    'aria-readonly'?: Booleanish;
     /**
      * Indicates what notifications the user agent will trigger when the accessibility tree within a live region is modified.
      * @see aria-atomic.
      */
     'aria-relevant'?: 'additions' | 'additions removals' | 'additions text' | 'all' | 'removals' | 'removals additions' | 'removals text' | 'text' | 'text additions' | 'text removals';
     /** Indicates that user input is required on the element before a form may be submitted. */
-    'aria-required'?: boolean | 'false' | 'true';
+    'aria-required'?: Booleanish;
     /** Defines a human-readable, author-localized description for the role of an element. */
     'aria-roledescription'?: string;
     /**
@@ -164,7 +166,7 @@ export type AriaAttributes = {
      * Indicates the current "selected" state of various widgets.
      * @see aria-checked @see aria-pressed.
      */
-    'aria-selected'?: boolean | 'false' | 'true';
+    'aria-selected'?: Booleanish;
     /**
      * Defines the number of items in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM.
      * @see aria-posinset.

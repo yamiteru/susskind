@@ -1,16 +1,11 @@
-import {AriaAttributes} from "./types/aria";
+import {AriaAttributes} from "./types/AriaAttributes";
+import {HTMLAttributes} from "./types/HTMLAttributes";
 
 export type Object<K extends string = string, V = any> = Record<K, V>;
 
 export type GeneralProps = Object<`data-${string}`, string | number | boolean>;
 
-export type SharedProps = {
-  id?: string;
-  class?: string;
-  [key: string]: string | undefined;
-};
-
-export type Props = SharedProps & AriaAttributes & GeneralProps;
+export type Props = HTMLAttributes & AriaAttributes & GeneralProps;
 
 export type Children = string[];
 
