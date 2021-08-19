@@ -1,7 +1,6 @@
 import {TemplatedApp} from "uWebSockets.js";
-import {Object} from "../../core/types";
-import {Routes} from "../types";
 import {asyncHandler} from "./asyncHandler";
+import {Routes} from "../types";
 
 export const startApp = (app: TemplatedApp, port: number = 3000) =>
     <T extends Object>(routes: Routes<T>) => {

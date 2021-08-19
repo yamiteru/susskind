@@ -1,6 +1,5 @@
 import {HttpRequest} from "uWebSockets.js";
-import {Component, Object} from "../core/types";
-import routeHandler from "./utils/routeHandler";
+import {Component} from "../core/types/common";
 
 export type Data<T> = (req: HttpRequest) => Promise<T>;
 
