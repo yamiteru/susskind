@@ -1,5 +1,5 @@
-import doubleTag from "../utils/doubleTag";
-import { Target } from "../types";
+import doubleTag from "../utils/tag/doubleTag";
+import { Target } from "../types/common";
 
 export const input = doubleTag<{
   accept?: string;

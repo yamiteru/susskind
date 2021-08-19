@@ -1,5 +1,5 @@
-import doubleTag from "../utils/doubleTag";
-import { ReferrerPolicy, AnchorTarget } from "../types";
+import doubleTag from "../utils/tag/doubleTag";
+import { ReferrerPolicy, AnchorTarget } from "../types/common";
 
 export const textarea = doubleTag<{
   autofocus?: boolean;

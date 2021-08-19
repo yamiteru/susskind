@@ -1,4 +1,4 @@
-import doubleTag from "../utils/doubleTag";
+import doubleTag from "../utils/tag/doubleTag";
 
 export const style = doubleTag<{
   type?: string;

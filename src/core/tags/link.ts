@@ -1,5 +1,5 @@
-import doubleTag from "../utils/doubleTag";
-import { ReferrerPolicy, As } from "../types";
+import doubleTag from "../utils/tag/doubleTag";
+import { ReferrerPolicy, As } from "../types/common";
 
 export const link = doubleTag<{
   as?: As;
