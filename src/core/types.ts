@@ -1,14 +1,8 @@
+import {AriaAttributes} from "./types/aria";
+
 export type Object<K extends string = string, V = any> = Record<K, V>;
 
-export type DataProp = `data-${string}`;
-
-export type AriaProp = `aria-${string}`;
-
-export type PropKey = AriaProp | DataProp;
-
-export type PropValue = string | number | boolean;
-
-export type GeneralProps = Object<PropKey, PropValue>;
+export type GeneralProps = Object<`data-${string}`, string | number | boolean>;
 
 export type SharedProps = {
   id?: string;
@@ -16,7 +10,7 @@ export type SharedProps = {
   [key: string]: string | undefined;
 };
 
-export type Props = SharedProps & GeneralProps;
+export type Props = SharedProps & AriaAttributes & GeneralProps;
 
 export type Children = string[];
 
