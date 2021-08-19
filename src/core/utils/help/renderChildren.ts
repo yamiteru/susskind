@@ -1,4 +1,4 @@
-import {Children} from "../../types";
+import {Children} from "../../types/common";
 
 const renderChildren = (children: Children): string => {
     let res = "";

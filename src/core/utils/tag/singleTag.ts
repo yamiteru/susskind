@@ -1,5 +1,5 @@
-import {Props} from "../../types";
 import propsToString from "../help/propsToString";
+import {Props} from "../../types/common";
 
 const singleTag = <T>(type: string) =>
     (props?: T & Props) =>

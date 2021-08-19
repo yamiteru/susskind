@@ -1,7 +1,7 @@
 import singleTag from "./singleTag";
 import propsToString from "../help/propsToString";
-import {Children, Props} from "../../types";
 import renderChildren from "../help/renderChildren";
+import {Children, Props} from "../../types/common";
 
 const doubleTag = <T>(type: string) =>
     (props?: T & Props) =>
