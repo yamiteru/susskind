@@ -1,17 +1,32 @@
-import {Component} from "../../core/types";
-import {a, h1, li, title, ul} from "../../core";
 import {IndexProps} from "./index.data";
 import Page from "../components/Page";
+import {a, div, h1, li, title, ul} from "../../core/tags";
+import {For, Match, Show, Switch} from "../../core/flow";
+import {Component} from "../../core/types/common";
 
 const IndexPage: Component<IndexProps> = ({ name, links }) =>
     Page(
         title()("Test - Homepage")
     )(
-        h1()(`Hello ${name}!`),
+        h1()(
+            Switch(
+                Match(() => name === "Yamiteru")(
+                    "Welcome back master."
+                ),
+                Match(() => name === "Hacker")(
+                    "Noo please spare me!"
+                )
+            )(
+                `Hello ${name}!`
+            )
+        ),
         ul()(
-            ...links.map(([title, link]) =>
+            For(links)(([title, link], i) =>
                 li()(
-                    a({ href: link })(title)
+                    a({ href: link })(title),
+                    Show(() => (i + 1) % 2 == 0)(
+                        div()("EVEN")
+                    )
                 )
             )
         )

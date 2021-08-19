@@ -1,5 +1,6 @@
-import {Children} from "../../core/types";
-import {body, head, html} from "../../core";
+import {Children} from "../../core/types/common";
+import {body, head, html} from "../../core/tags";
+
 
 const Page = (...headChildren: Children) =>
     (...bodyChildren: Children) =>
