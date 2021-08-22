@@ -1,3 +1,3 @@
 import doubleTag from "../utils/tag/doubleTag";
 
-export const blockquote = doubleTag("blockquote");
+export const Blockquote = doubleTag("blockquote");

@@ -1,3 +1,3 @@
 import doubleTag from "../utils/tag/doubleTag";
 
-export const footer = doubleTag("footer");
+export const Footer = doubleTag("footer");

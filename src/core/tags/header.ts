@@ -1,3 +1,3 @@
 import doubleTag from "../utils/tag/doubleTag";
 
-export const header = doubleTag("header");
+export const Header = doubleTag("header");

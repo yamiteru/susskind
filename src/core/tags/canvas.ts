@@ -1,3 +1,6 @@
 import doubleTag from "../utils/tag/doubleTag";
 
-export const canvas = doubleTag("canvas");
+export const Canvas = doubleTag<{
+  height?: number;
+  width?: number;
+}>("canvas");

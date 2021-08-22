@@ -1,3 +1,5 @@
 import doubleTag from "../utils/tag/doubleTag";
 
-export const head = doubleTag("head");
+export const Head = doubleTag<{
+  profile?: string;
+}>("head");

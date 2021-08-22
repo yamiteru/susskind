@@ -1,7 +1,7 @@
 import doubleTag from "../utils/tag/doubleTag";
 import { ReferrerPolicy, As } from "../types/common";
 
-export const link = doubleTag<{
+export const Link = doubleTag<{
   as?: As;
   crossorigin?: string;
   disabled?: boolean;

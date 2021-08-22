@@ -1,3 +1,3 @@
 import doubleTag from "../utils/tag/doubleTag";
 
-export const nav = doubleTag("nav");
+export const Nav = doubleTag("nav");

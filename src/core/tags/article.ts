@@ -1,3 +1,3 @@
 import doubleTag from "../utils/tag/doubleTag";
 
-export const article = doubleTag("article");
+export const Article = doubleTag("article");
