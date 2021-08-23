@@ -1,7 +1,7 @@
 import {Data} from "../types";
-import {Store, StoreRef, View} from "../../core/types/common";
+import {Store, StoreGetters, View} from "../../core/types/common";
 
-export const route = <A, B extends StoreRef>(
+export const route = <A, B extends StoreGetters>(
     data: Data<A>,
     store: Store<A, B>,
     view: View<B>

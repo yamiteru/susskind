@@ -1,7 +1,7 @@
-import {Children, StoreRef} from "../types/common";
+import {Children, StoreGetters} from "../types/common";
 import renderChildren from "../utils/help/renderChildren";
 
-export const Switch = <S extends StoreRef>(...cases: ((store: S) => string)[]) =>
+export const Switch = <S extends StoreGetters>(...cases: ((store: S) => string)[]) =>
     (...fallback: Children<S>) =>
         (store: S) => {
             const l = cases.length;

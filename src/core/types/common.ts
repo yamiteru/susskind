@@ -7,19 +7,19 @@ export type Object<K extends string = string, V = any> = Record<K, V>;
 
 export type GeneralProps = Object<`data-${string}`, string | number | boolean>;
 
-export type Props = HTMLAttributes & AriaAttributes & GeneralProps;
+export type Attributes = HTMLAttributes & AriaAttributes & GeneralProps;
 
-export type Store<I extends Object, O extends StoreRef> = (data: I) => O;
+export type Store<I extends Object, O extends StoreGetters> = (data: I) => O;
 
-export type StoreRef = {
+export type StoreGetters = {
     [k: string]: () => any;
 };
 
-export type View<S extends StoreRef> = (store: S) => AnyDocument;
+export type View<S extends StoreGetters> = (store: S) => AnyDocument;
 
-export type Child<S extends StoreRef> = string | ((store: S) => string);
+export type Child<S extends StoreGetters> = string | ((store: S) => string);
 
-export type Children<S extends StoreRef> = Child<S>[];
+export type Children<S extends StoreGetters> = Child<S>[];
 
 export type AnyDocument = {
     type: string;

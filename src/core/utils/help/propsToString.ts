@@ -1,6 +1,6 @@
-import {Props} from "../../types/common";
+import {Attributes} from "../../types/common";
 
-const propsToString = (props?: Props) => {
+const propsToString = (props?: Attributes) => {
     if(props) {
         let res: string = "";
         for (const k in props) res += ` ${k}="${(props as any)[k]}"`;

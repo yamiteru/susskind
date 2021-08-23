@@ -1,4 +1,4 @@
-import {AnyDocument, StoreRef} from "../../types/common";
+import {AnyDocument, StoreGetters} from "../../types/common";
 
-export const Document = <S extends StoreRef>(type: string, view: string): AnyDocument =>
+export const Document = <S extends StoreGetters>(type: string, view: string): AnyDocument =>
     ({ type, view });

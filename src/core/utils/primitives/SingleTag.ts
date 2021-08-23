@@ -1,8 +1,8 @@
 import propsToString from "../help/propsToString";
-import {Props} from "../../types/common";
+import {Attributes} from "../../types/common";
 
-export const SingleTag = <T>(type: string) =>
-    (props?: T & Props) =>
+export const SingleTag = <A>(type: string) =>
+    (props?: A & Attributes) =>
         () =>
             () =>
                 `<${type}${propsToString(props)}/>`;

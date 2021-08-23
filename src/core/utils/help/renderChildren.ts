@@ -1,6 +1,6 @@
-import {Children, StoreRef} from "../../types/common";
+import {Children, StoreGetters} from "../../types/common";
 
-const renderChildren = <S extends StoreRef>(children: Children<S>, store: S): string => {
+const renderChildren = <S extends StoreGetters>(children: Children<S>, store: S): string => {
     let res = "";
     const length = children.length;
 

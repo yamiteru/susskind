@@ -1,7 +1,7 @@
-import {Child, Children, Object, StoreRef} from "../../types/common";
+import {Child, Children, Object, StoreGetters} from "../../types/common";
 import renderChildren from "../help/renderChildren";
 
-export const Component = <S extends StoreRef = any, P extends Object = any>(template: (store: S, props?: P, children?: Children<S>) => Child<S>) =>
+export const Component = <S extends StoreGetters = any, P extends Object = any>(template: (store: S, props?: P, children?: Children<S>) => Child<S>) =>
     (props?: P) =>
         (...children: Children<S>) =>
             (store: S) => renderChildren<S>(

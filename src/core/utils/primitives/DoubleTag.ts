@@ -1,11 +1,11 @@
 import {SingleTag} from "./singleTag";
 import propsToString from "../help/propsToString";
 import renderChildren from "../help/renderChildren";
-import {Children, Props, StoreRef} from "../../types/common";
+import {Children, Attributes, StoreGetters} from "../../types/common";
 
-export const DoubleTag = <T>(type: string) =>
-    (props?: T & Props) =>
-        <S extends StoreRef>(...children: Children<S>) =>
+export const DoubleTag = <A>(type: string) =>
+    (props?: A & Attributes) =>
+        <S extends StoreGetters>(...children: Children<S>) =>
             (store: S) =>
                 children.length
                     ? `<${type}${propsToString(props)}>${renderChildren<S>(children, store)}</${type}>`

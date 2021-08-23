@@ -1,10 +1,10 @@
 import {HttpRequest, HttpResponse} from "uWebSockets.js";
 import {Route} from "../types";
-import {StoreRef} from "../../core/types/common";
+import {StoreGetters} from "../../core/types/common";
 
 const { hrtime } = process;
 
-export const asyncHandler = <I, S extends StoreRef>(route: Route<I, S>) =>
+export const asyncHandler = <I, S extends StoreGetters>(route: Route<I, S>) =>
     async (res: HttpResponse, req: HttpRequest) => {
         res.onAborted(() => res.aborted = true);
 

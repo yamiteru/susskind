@@ -1,7 +1,7 @@
-import {Children, StoreRef} from "../types/common";
+import {Children, StoreGetters} from "../types/common";
 
 export const For = <T extends any[]>(arr: T) =>
-    <S extends StoreRef>(children: (v: T[number], i: number) => Children<S>[number]) =>
+    <S extends StoreGetters>(children: (v: T[number], i: number) => Children<S>[number]) =>
         (store: S): string => {
             let res: string = "";
             const l = arr.length;
