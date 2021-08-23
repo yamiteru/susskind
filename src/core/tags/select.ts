@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Select = doubleTag<{
+export const Select = DoubleTag<{
   autocomplete?: boolean;
   autofocus?: boolean;
   disabled?: boolean;

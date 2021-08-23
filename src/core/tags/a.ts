@@ -1,7 +1,7 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 import { ReferrerPolicy, Target } from "../types/common";
 
-export const A = doubleTag<{
+export const A = DoubleTag<{
   download?: string;
   href: string;
   hreflang?: string;

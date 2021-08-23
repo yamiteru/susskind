@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Canvas = doubleTag<{
+export const Canvas = DoubleTag<{
   height?: number;
   width?: number;
 }>("canvas");

@@ -1,5 +1,5 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Br = doubleTag<{
+export const Br = DoubleTag<{
   clear?: string;
 }>("br");

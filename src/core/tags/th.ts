@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Th = doubleTag<{
+export const Th = DoubleTag<{
   abbr?: string;
   colspan?: number;
   headers?: string;

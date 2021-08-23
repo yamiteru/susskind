@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Param = doubleTag<{
+export const Param = DoubleTag<{
   name?: string;
   value?: string;
 }>("param");

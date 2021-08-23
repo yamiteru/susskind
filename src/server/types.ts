@@ -1,15 +1,14 @@
 import {HttpRequest} from "uWebSockets.js";
-import {Component} from "../core/types/common";
+import {Object, Store, StoreRef, View} from "../core/types/common";
 
-export type Data<T> = (req: HttpRequest) => Promise<T>;
+export type Data<O extends Object> = (req: HttpRequest) => Promise<O>;
 
-export type Page<T> = Component<T>; 
-
-export type Route<T> = {
-    data: Data<T>;
-    page: Page<T>;
+export type Route<I, S extends StoreRef> = {
+    data: Data<I>;
+    store: Store<I, S>;
+    view: View<S>;
 };
 
-export type Routes<T extends Object> = {
-    [K in keyof T]: Route<T[K]>;
+export type Routes<T extends Record<string, any>, U> = {
+    [K in keyof T]: Route<T[K], any>;
 };

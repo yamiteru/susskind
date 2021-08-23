@@ -1,5 +1,5 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Details = doubleTag<{
+export const Details = DoubleTag<{
   open?: boolean;
 }>("details");

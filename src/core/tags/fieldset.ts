@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Fieldset = doubleTag<{
+export const Fieldset = DoubleTag<{
   disabled?: boolean;
   form?: string;
   name?: string;

@@ -1,3 +1,3 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Legend = doubleTag("legend");
+export const Legend = DoubleTag("legend");

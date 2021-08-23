@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Svg = doubleTag<{
+export const Svg = DoubleTag<{
   width?: number;
   height?: number;
   viewBox?: string;

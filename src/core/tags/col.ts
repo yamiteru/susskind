@@ -1,5 +1,5 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Col = doubleTag<{
+export const Col = DoubleTag<{
   span?: number;
 }>("col");

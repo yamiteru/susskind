@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Main = doubleTag<{
+export const Main = DoubleTag<{
   charset?: string;
   content?: string;
   name?: string;

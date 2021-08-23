@@ -1,5 +1,5 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Time = doubleTag<{
+export const Time = DoubleTag<{
   datetime?: string;
 }>("time");

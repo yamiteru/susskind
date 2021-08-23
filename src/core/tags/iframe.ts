@@ -1,7 +1,7 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 import { ReferrerPolicy, Sandbox } from "../types/common";
 
-export const Iframe = doubleTag<{
+export const Iframe = DoubleTag<{
   allow?: string;
   allowfullscreen?: boolean;
   allowpaymentrequest?: boolean;

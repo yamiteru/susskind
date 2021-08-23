@@ -1,7 +1,7 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 import { Target } from "../types/common";
 
-export const Input = doubleTag<{
+export const Input = DoubleTag<{
   accept?: string;
   alt?: string;
   autofocus?: boolean;

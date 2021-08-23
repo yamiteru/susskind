@@ -1,5 +1,5 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Label = doubleTag<{
+export const Label = DoubleTag<{
   for?: string;
 }>("label");

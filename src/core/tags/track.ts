@@ -1,7 +1,7 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 import { Kind } from "../types/common";
 
-export const Track = doubleTag<{
+export const Track = DoubleTag<{
   default?: boolean;
   kind?: Kind;
   label?: string;

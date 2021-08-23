@@ -1,3 +1,3 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Noscript = doubleTag("noscript");
+export const Noscript = DoubleTag("noscript");

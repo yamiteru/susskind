@@ -1,5 +1,5 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Map = doubleTag<{
+export const Map = DoubleTag<{
   name?: string;
 }>("map");

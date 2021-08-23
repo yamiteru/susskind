@@ -1,7 +1,7 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 import { Controls } from "../types/common";
 
-export const Video = doubleTag<{
+export const Video = DoubleTag<{
   autoplay?: boolean;
   autopictureinpicture?: boolean;
   controls?: boolean;

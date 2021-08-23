@@ -1,6 +1,6 @@
-import {Children} from "../types/common";
+import {Children, StoreRef} from "../types/common";
 import {Show} from "./Show";
 
 export const Match = (predicate: () => boolean) =>
-    (...children: Children) =>
-        (): string => Show(predicate)(...children);
+    <S extends StoreRef>(...children: Children<S>) =>
+        (store: S): string => Show(predicate)<S>(...children)(store);

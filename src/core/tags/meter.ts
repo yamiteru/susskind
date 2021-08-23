@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Meter = doubleTag<{
+export const Meter = DoubleTag<{
   value?: number;
   min?: number;
   max?: number;

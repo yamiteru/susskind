@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Ins = doubleTag<{
+export const Ins = DoubleTag<{
   cite?: string;
   datetime?: string;
 }>("ins");

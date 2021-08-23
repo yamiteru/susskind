@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Progress = doubleTag<{
+export const Progress = DoubleTag<{
   max?: number;
   value?: number;
 }>("progress");

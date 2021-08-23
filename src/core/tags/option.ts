@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Option = doubleTag<{
+export const Option = DoubleTag<{
   disabled?: boolean;
   label?: string;
   selected?: boolean;

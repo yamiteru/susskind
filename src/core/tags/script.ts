@@ -1,7 +1,7 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 import { ReferrerPolicy } from "../types/common";
 
-export const Script = doubleTag<{
+export const Script = DoubleTag<{
   src: string;
   async?: boolean;
   crossorigin?: string;

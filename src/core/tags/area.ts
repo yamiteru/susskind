@@ -1,7 +1,7 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 import { ReferrerPolicy, Target, Coords } from "../types/common";
 
-export const Area = doubleTag<{
+export const Area = DoubleTag<{
   alt?: string;
   coords?: Coords;
   download?: string;

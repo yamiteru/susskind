@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Td = doubleTag<{
+export const Td = DoubleTag<{
   colspan?: number;
   headers?: string;
   rowspan?: number;

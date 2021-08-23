@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Ol = doubleTag<{
+export const Ol = DoubleTag<{
   reversed?: boolean;
   start?: number;
   type?: string;

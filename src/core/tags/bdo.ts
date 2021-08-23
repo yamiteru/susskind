@@ -1,3 +1,3 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Bdo = doubleTag("bdo");
+export const Bdo = DoubleTag("bdo");

@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Audio = doubleTag<{
+export const Audio = DoubleTag<{
   autoplay?: boolean;
   controls?: boolean;
   crossorigin?: string;

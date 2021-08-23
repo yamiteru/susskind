@@ -1,11 +1,15 @@
+import {Children, StoreRef} from "../types/common";
+
 export const For = <T extends any[]>(arr: T) =>
-    (children: (v: T[number], i: number) => string): string => {
-        let res: string = "";
-        const l = arr.length;
+    <S extends StoreRef>(children: (v: T[number], i: number) => Children<S>[number]) =>
+        (store: S): string => {
+            let res: string = "";
+            const l = arr.length;
 
-        for (let i = 0; i < l; i++) {
-            res += children(arr[i], i);
-        }
+            for (let i = 0; i < l; i++) {
+                const tmp = children(arr[i], i);
+                res += typeof tmp === "string" ? tmp : tmp(store);
+            }
 
-        return res;
-    };
+            return res;
+        };

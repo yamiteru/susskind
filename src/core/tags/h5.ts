@@ -1,3 +1,3 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const H5 = doubleTag("h5");
+export const H5 = DoubleTag("h5");

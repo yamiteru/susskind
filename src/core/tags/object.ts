@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Object = doubleTag<{
+export const Object = DoubleTag<{
   data?: string;
   form?: string;
   height?: number;

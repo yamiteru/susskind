@@ -1,16 +1,18 @@
 import {HttpRequest, HttpResponse} from "uWebSockets.js";
 import {Route} from "../types";
+import {StoreRef} from "../../core/types/common";
 
 const { hrtime } = process;
 
-export const asyncHandler = <T>(route: Route<T>) =>
+export const asyncHandler = <I, S extends StoreRef>(route: Route<I, S>) =>
     async (res: HttpResponse, req: HttpRequest) => {
         res.onAborted(() => res.aborted = true);
 
         const start = hrtime.bigint();
 
         const data = await route.data(req);
-        const view = route.page(data)();
+        const store = route.store(data);
+        const { view, type } = route.view(store);
 
         const end = hrtime.bigint();
         const ns = end - start;
@@ -21,7 +23,7 @@ export const asyncHandler = <T>(route: Route<T>) =>
         !res.aborted && res.cork(() => res
             .writeHeader("Access-Control-Allow-Origin", "*")
             .writeHeader("Access-Control-Allow-Headers", "content-type")
-            .writeHeader("Content-Type", "text/html")
+            .writeHeader("Content-Type", type)
             .writeStatus("200 OK")
             .end(view));
     };

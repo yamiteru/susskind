@@ -1,7 +1,7 @@
 import { Target } from "../types/common";
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Button = doubleTag<{
+export const Button = DoubleTag<{
   autofocus?: boolean;
   disabled?: boolean;
   form?: string;

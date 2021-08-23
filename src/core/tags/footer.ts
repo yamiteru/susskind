@@ -1,3 +1,3 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Footer = doubleTag("footer");
+export const Footer = DoubleTag("footer");

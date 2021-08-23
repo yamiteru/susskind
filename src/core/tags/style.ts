@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Style = doubleTag<{
+export const Style = DoubleTag<{
   type?: string;
   media?: string;
   nonce?: number;

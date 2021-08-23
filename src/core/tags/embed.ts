@@ -1,6 +1,6 @@
-import doubleTag from "../utils/tag/doubleTag";
+import { DoubleTag } from "../utils";
 
-export const Embed = doubleTag<{
+export const Embed = DoubleTag<{
   height?: number;
   src: string;
   type?: string;
