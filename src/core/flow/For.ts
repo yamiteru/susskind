@@ -4,7 +4,7 @@ export const For = <T extends any[]>(arr: T) =>
         const l = arr.length;
 
         let i = -1;
-        while (++i < l) res += children(arr[i], i)
+        while (++i < l) res += children(arr[i], i);
 
         return res;
     };
