@@ -1,9 +1,9 @@
-import {Component} from "../../core/utils";
-import {IndexStoreMethods} from "../pages/index.store";
+import {IndexStoreMethods} from "../views/index.store";
 import {A, Div, Li, Ul} from "../../core/tags";
 import {For, Show} from "../../core/flow";
+import {Component} from "../../core/types/common";
 
-const LinkList = Component<IndexStoreMethods>((s) =>
+const LinkList: Component<IndexStoreMethods> = (s) => () => (
     Ul()(
         For(s.links)(([title, link], i) =>
             Li()(

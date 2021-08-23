@@ -1,14 +1,11 @@
-import {Children, StoreGetters} from "../../types/common";
+import {Children} from "../../types/common";
 
-const renderChildren = <S extends StoreGetters>(children: Children<S>, store: S): string => {
+const renderChildren = (children: Children) => {
+    const l = children.length;
     let res = "";
 
-    const l = children.length;
     let i = -1;
-    while(++i < l) {
-        const tmp = children[+i];
-        res += typeof tmp === "string" ? tmp: tmp(store);
-    }
+    while(++i < l) res += children[+i];
 
     return res;
 };

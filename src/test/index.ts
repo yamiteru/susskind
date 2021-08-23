@@ -2,9 +2,9 @@ import {startApp} from "../server";
 import {App} from "uWebSockets.js";
 import {route} from "../server/utils/route";
 
-import IndexData from "./pages/index.data";
-import IndexPage from "./pages/index.page";
-import IndexStore from "./pages/index.store";
+import IndexData from "./views/index.data";
+import IndexView from "./views/index.view";
+import IndexStore from "./views/index.store";
 
 import * as cluster from "cluster";
 import {Cluster} from "cluster";
@@ -25,7 +25,7 @@ if(c.isPrimary) {
         "/": route(
             IndexData,
             IndexStore,
-            IndexPage,
+            IndexView,
         )
     });
 }

@@ -15,11 +15,12 @@ export type StoreGetters = {
     [k: string]: (() => any) | any;
 };
 
+export type Component<S extends Object, P extends Object = {}> = (state: S, props?: P) =>
+    (...children: Children) => string;
+
 export type View<S extends StoreGetters> = (store: S) => AnyDocument;
 
-export type Child<S extends StoreGetters> = string | ((store: S) => string);
-
-export type Children<S extends StoreGetters> = Child<S>[];
+export type Children = string[];
 
 export type AnyDocument = {
     type: string;

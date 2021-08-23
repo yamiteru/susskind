@@ -3,12 +3,13 @@ import {HTMLDocument} from "../../core/utils";
 import {IndexStoreMethods} from "./index.store";
 import LinkList from "../components/LinkList";
 import Greet from "../components/Greet";
+import {View} from "../../core/types/common";
 
-const IndexPage = HTMLDocument<IndexStoreMethods>(
+const IndexView: View<IndexStoreMethods> = (s) => HTMLDocument(
     Title()("Test - Homepage"),
 )(
-    Greet()(),
-    LinkList()(),
+    Greet(s)(),
+    LinkList(s)(),
 );
 
-export default IndexPage;
+export default IndexView;

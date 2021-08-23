@@ -5,8 +5,7 @@ import {Children, Attributes, StoreGetters} from "../../types/common";
 
 export const DoubleTag = <A>(type: string) =>
     (props?: A & Attributes) =>
-        <S extends StoreGetters>(...children: Children<S>) =>
-            (store: S) =>
-                children.length
-                    ? `<${type}${propsToString(props)}>${renderChildren<S>(children, store)}</${type}>`
-                    : SingleTag(type)(props)()();
+        <S extends StoreGetters>(...children: Children) =>
+            children.length
+                ? `<${type}${propsToString(props)}>${renderChildren(children)}</${type}>`
+                : SingleTag(type)(props)();
