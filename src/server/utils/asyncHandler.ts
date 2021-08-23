@@ -15,7 +15,7 @@ export const asyncHandler = <I, S extends StoreGetters>(route: Route<I, S>) =>
         const eData = hrtime.bigint();
 
         const sStore = hrtime.bigint();
-        const store = route.store(data);
+        const store = route.store(Object.freeze(data));
         const eStore = hrtime.bigint();
 
         const sView = hrtime.bigint();

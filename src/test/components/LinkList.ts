@@ -5,7 +5,7 @@ import {For, Show} from "../../core/flow";
 
 const LinkList = Component<IndexStoreMethods>((s) =>
     Ul()(
-        For(s.links())(([title, link], i) =>
+        For(s.links)(([title, link], i) =>
             Li()(
                 A({ href: link })(title),
                 Show(() => (i + 1) % 2 == 0)(

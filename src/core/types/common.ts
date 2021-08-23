@@ -9,10 +9,10 @@ export type GeneralProps = Object<`data-${string}`, string | number | boolean>;
 
 export type Attributes = HTMLAttributes & AriaAttributes & GeneralProps;
 
-export type Store<I extends Object, O extends StoreGetters> = (data: I) => O;
+export type Store<I extends Object, O extends StoreGetters> = (data: Readonly<I>) => O;
 
 export type StoreGetters = {
-    [k: string]: () => any;
+    [k: string]: (() => any) | any;
 };
 
 export type View<S extends StoreGetters> = (store: S) => AnyDocument;

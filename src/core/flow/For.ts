@@ -6,7 +6,8 @@ export const For = <T extends any[]>(arr: T) =>
             let res: string = "";
             const l = arr.length;
 
-            for (let i = 0; i < l; i++) {
+            let i = -1;
+            while(++i < l) {
                 const tmp = children(arr[i], i);
                 res += typeof tmp === "string" ? tmp : tmp(store);
             }

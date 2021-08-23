@@ -6,7 +6,8 @@ export const Switch = <S extends StoreGetters>(...cases: ((store: S) => string)[
         (store: S) => {
             const l = cases.length;
 
-            for(let i = 0; i < l; i++) {
+            let i = -1;
+            while(++i < l) {
                 const tmp = cases[i](store);
                 if(tmp !== "") return tmp;
             }
