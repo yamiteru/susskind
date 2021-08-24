@@ -1,6 +1,8 @@
 import { HTMLAttributes } from "./HTMLAttributes";
 import { AriaAttributes } from "./AriaAttributes";
 
+export type Maybe<T> = T | null;
+
 export type Booleanish = boolean | "true" | "false";
 
 export type Object<K extends string = string, V = any> = Record<K, V>;
@@ -15,8 +17,11 @@ export type StoreGetters = {
     [k: string]: (() => any) | any;
 };
 
-export type Component<S extends Object, P extends Object = {}> = (state: S, props?: P) =>
-    (...children: Children) => string;
+export type Component<S extends Object, P extends Object = {}> = (
+    state: S,
+    props?: P,
+    children?: Children
+) => string;
 
 export type View<S extends StoreGetters> = (store: S) => AnyDocument;
 

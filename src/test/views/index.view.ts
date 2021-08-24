@@ -5,11 +5,11 @@ import LinkList from "../components/LinkList";
 import Greet from "../components/Greet";
 import {View} from "../../core/types/common";
 
-const IndexView: View<IndexStoreMethods> = (s) => HTMLDocument(
-    Title()("Test - Homepage"),
-)(
-    Greet(s)(),
-    LinkList(s)(),
-);
+const IndexView: View<IndexStoreMethods> = (s) => HTMLDocument([
+    Title(null, ["Test - Homepage"])
+], [
+    Greet(s),
+    LinkList(s),
+]);
 
 export default IndexView;

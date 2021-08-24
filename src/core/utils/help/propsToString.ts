@@ -1,7 +1,7 @@
-import {Attributes} from "../../types/common";
+import {Attributes, Maybe} from "../../types/common";
 
-const propsToString = (props?: Attributes) => {
-    if(props) {
+const propsToString = (props: Maybe<Attributes> = null) => {
+    if(props !== null) {
         const keys = Object.keys(props);
         const l = keys.length;
         let res: string = "";
