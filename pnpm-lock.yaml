@@ -1,13 +1,13 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@types/node': ^16.6.1
+  '@types/node': ^16.7.1
   ts-node-dev: ^1.1.8
   typescript: ^4.4.1-rc
   uWebSockets.js: github:uNetworking/uWebSockets.js#v19.3.0
 
 dependencies:
-  '@types/node': 16.6.1
+  '@types/node': 16.7.1
   uWebSockets.js: github.com/uNetworking/uWebSockets.js/7bf0faac5859fef2d113e83d22803f7833774c11
 
 devDependencies:
@@ -16,8 +16,8 @@ devDependencies:
 
 packages:
 
-  /@types/node/16.6.1:
-    resolution: {integrity: sha512-Sr7BhXEAer9xyGuCN3Ek9eg9xPviCF2gfu9kTfuU2HkTVAMYSDeX40fvpmo72n5nansg3nsBjuQBrsS28r+NUw==}
+  /@types/node/16.7.1:
+    resolution: {integrity: sha512-ncRdc45SoYJ2H4eWU9ReDfp3vtFqDYhjOsKlFFUDEn8V1Bgr2RjYal8YT5byfadWIRluhPFU6JiDOl0H6Sl87A==}
     dev: false
 
   /@types/strip-bom/3.0.0:
