@@ -1,11 +1,11 @@
 export type Data = {
-    horizontal: number;
-    vertical: number;
+    horizontal: any[];
+    vertical: any[];
 };
 
 const data: Data = {
-    horizontal: 1000,
-    vertical: 1000,
+    horizontal: [...Array(1000)].map((_, i) => i),
+    vertical: [...Array(1000)].map((_, i) => i),
 };
 
 export default data;
