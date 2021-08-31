@@ -1,11 +1,13 @@
 export type Data = {
     horizontal: any[];
-    vertical: any[];
 };
 
-const data: Data = {
-    horizontal: [...Array(1000)].map((_, i) => i),
-    vertical: [...Array(1000)].map((_, i) => i),
-};
+const scale = [
+    1, 10, 100, 1000, 10000, 100000
+];
+
+const data: Data[] = scale.map((n) => ({
+    horizontal: [...Array(n)].map((_, i) => i),
+}));
 
 export default data;

@@ -1,4 +1,4 @@
-const median = (numbers: Uint8Array) =>  {
+const median = (numbers: number[]) =>  {
     const middle = (numbers.length + 1) / 2;
     const sorted = numbers.sort((a, b) => a - b);
     const isEven = sorted.length % 2 === 0;

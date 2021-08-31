@@ -1,6 +1,6 @@
 import {Children} from "../../types/common";
 
-const renderChildren = (children: Children) => {
+const renderChildren = (children: Children = []) => {
     const l = children.length;
     let res = "";
 

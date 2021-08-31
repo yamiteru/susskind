@@ -1,37 +1,29 @@
 import m from "./median";
-import a from "./average";
-import s from "./sum";
-import o from "./ops";
-import now from "./now";
+import now, {MS} from "./now";
 
 const suite = <T extends Record<string, any>>(
     cb: (data: T) => void,
     data: T,
-    runs: number
+    runs: number,
+    timeout: number,
 ) => {
-    const times = new Uint8Array(runs);
+    let results = Array(runs);
 
     let i = -1;
     while(++i < runs) {
         const start = now();
-        cb(data);
-        const end = now();
-        times.set([Number(end - start)], i);
+        const max = BigInt(timeout) * MS;
+        let ops = 0;
+
+        while (now() - start < max) {
+            cb(data);
+            ++ops;
+        }
+
+        results[i] = ops;
     }
 
-    const sum = s(times);
-    const medianTime = m(times);
-    const medianOps = o(medianTime);
-    const median = { time: medianTime, ops: medianOps };
-    const averageTime = a(times);
-    const averageOps = o(averageTime);
-    const average = { time: averageTime, ops: averageOps };
-
-    return {
-        sum,
-        median,
-        average,
-    };
+    return m(results) * (1000 / timeout);
 };
 
 export default suite;

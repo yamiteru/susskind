@@ -2,11 +2,9 @@ import {Data} from "../data";
 import {compile} from "pug";
 
 const pug = (data: Data) => {
-    return compile(`div(id="root", className="root")
+    return compile(`div
     each i in horizontal
-      ul(id="list" + i, className="list")
-        each j in vertical
-          li(id="list" + i + "item" + j, className="item")`)(data);
+      ul`)(data);
 };
 
 export default pug;
